@@ -1,7 +1,10 @@
 html {
 	height: 100%;
+	width: 100%;
+	padding: 0;
+	margin: 0;
 }
-
+/* * {outline: dashed;} */
 @font-face {
 	font-family: 'icomoon';
 	src:url('fonts/icomoon.eot');
@@ -17,9 +20,11 @@ html {
 
 body {
 	height: 100%;
+	max-width: 100%;
 	margin: 0;
 	padding: 0;
 	font-family: helvetica, sans-serif;
+	font-size: 100%;
 }
 
 
@@ -28,30 +33,63 @@ h1 {
 	color: rgba(0,0,0,.3);
 }
 
+
+h2 {
+	max-width: 70%;
+	margin: 1.25em auto;
+	font-size: 1.5em;
+	color: rgba(0,0,0,.6);
+}
+
+
 .header {
 	position: relative;
-	height: auto;
-	padding-top: 1em;
+	max-width: 100%;
 	font-family: 'icomoon';
 }
 
+.info {
+	float: right;
+	clear: both;
+	margin-right: 5em;
+	text-decoration: underline;
+}
+
+.info:hover {
+	color: #7bc8ff;
+	cursor: pointer;
+}
+
+
+.info-div p {
+	max-width: 70%;
+	margin: 1.25em auto;
+	text-align: left;
+	font-size: 1.2em;
+	line-height: 1.45em;
+	color: rgba(0,0,0,0.5);
+	text-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+}
+
 #map-canvas {
-	position: absolute;
-	width: 100%;
-	height: 95%;
+	display: block;
+	max-width: 100%;
+	height: 100%;
 }
 
 
 
 .logo {
-	position: relative;
-	left: 1em;
+/* 	position: relative; */
+	float: left;
+	margin-left: 5em;
+	margin-top: 1em;	
 }
 
 .meter {
-	position: absolute;
-	right: 5em;
-	top: 2em;
+	float: right;
+	margin-right: 5em;
+	margin-top: 2em;
 	width: 30em;
 	border-radius: 20px;
 }
@@ -68,68 +106,33 @@ h1 {
 .meter { 
 	height: 20px;  /* Can be anything */
 	background: #555;
-	-moz-border-radius: 25px;
-	-webkit-border-radius: 25px;
-	border-radius: 25px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius:5px;
+	border-radius: 5px;
 	padding: 10px;
-	-webkit-box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3);
-	-moz-box-shadow   : inset 0 -1px 1px rgba(255,255,255,0.3);
-	box-shadow        : inset 0 -1px 1px rgba(255,255,255,0.3);
+
 }
 
 .meter > span {
 	display: block;
 	height: 100%;
 	width: 30%;
-	   -webkit-border-top-right-radius: 8px;
-	-webkit-border-bottom-right-radius: 8px;
-	       -moz-border-radius-topright: 8px;
-	    -moz-border-radius-bottomright: 8px;
-	           border-top-right-radius: 8px;
-	        border-bottom-right-radius: 8px;
-	    -webkit-border-top-left-radius: 20px;
-	 -webkit-border-bottom-left-radius: 20px;
-	        -moz-border-radius-topleft: 20px;
-	     -moz-border-radius-bottomleft: 20px;
-	            border-top-left-radius: 20px;
-	         border-bottom-left-radius: 20px;
+	   -webkit-border-top-right-radius: 2px;
+	-webkit-border-bottom-right-radius: 2px;
+	       -moz-border-radius-topright: 2px;
+	    -moz-border-radius-bottomright: 2px;
+	           border-top-right-radius: 2px;
+	        border-bottom-right-radius: 2px;
+	    -webkit-border-top-left-radius: 4px;
+	 -webkit-border-bottom-left-radius: 4px;
+	        -moz-border-radius-topleft: 4px;
+	     -moz-border-radius-bottomleft: 4px;
+	            border-top-left-radius: 4px;
+	         border-bottom-left-radius: 4px;
 	background-color: rgb(43,194,83);
-	background-image: -webkit-gradient(
-	  linear,
-	  left bottom,
-	  left top,
-	  color-stop(0, rgb(43,194,83)),
-	  color-stop(1, rgb(84,240,84))
-	 );
-	background-image: -webkit-linear-gradient(
-	  center bottom,
-	  rgb(43,194,83) 37%,
-	  rgb(84,240,84) 69%
-	 );
-	background-image: -moz-linear-gradient(
-	  center bottom,
-	  rgb(43,194,83) 37%,
-	  rgb(84,240,84) 69%
-	 );
-	background-image: -ms-linear-gradient(
-	  center bottom,
-	  rgb(43,194,83) 37%,
-	  rgb(84,240,84) 69%
-	 );
-	background-image: -o-linear-gradient(
-	  center bottom,
-	  rgb(43,194,83) 37%,
-	  rgb(84,240,84) 69%
-	 );
-	-webkit-box-shadow: 
-	  inset 0 2px 9px  rgba(255,255,255,0.3),
-	  inset 0 -2px 6px rgba(0,0,0,0.4);
-	-moz-box-shadow: 
-	  inset 0 2px 9px  rgba(255,255,255,0.3),
-	  inset 0 -2px 6px rgba(0,0,0,0.4);
 	position: relative;
 	overflow: hidden;
-		-webkit-animation: meter-running 6s ease;
+		-webkit-animation: meter-running 3s ease;
 }
 
 
@@ -139,7 +142,7 @@ h1 {
 	margin-right: .5em;
 	height: auto;
 	width: auto;
-	-webkit-animation: show-goal 8s ease;
+	-webkit-animation: show-goal 3s ease;
 }
 
 @-webkit-keyframes meter-running {
@@ -149,6 +152,84 @@ h1 {
 
 @-webkit-keyframes show-goal {
 	0% {opacity: 0;}
-	80% {opacity: .3;}
+	95% {opacity: 0;}
 	100% {opacity: 1;}
 }
+
+
+
+/* 
+
+Animation for info div
+
+*/
+
+
+
+
+.info-div {
+	clear: both;
+
+	position: relative;
+	height: 0;
+	margin-left: -1em;
+	padding: 0.3em 2em;
+	margin-top: 4em;
+	border-top: 1px solid #ccc;
+	border-bottom: 2px solid #ccc;
+	-webkit-animation: show-info 0.2s ease-in-out reverse;
+	background: -webkit-linear-gradient(top, rgba(225,225,225,1) 0%, rgba(230, 230, 230, 1) 48.5%, rgba(200,200,200,.01) 49.5%, rgba(255,255,255,1) 50.5%, rgba(250,250,250,.03) 51%, #fff 100%);
+}
+
+.info-div:hover {
+	cursor: pointer;
+}
+
+.info-div-anim {
+		height: auto;
+		-webkit-animation: show-info 0.3s ease-in-out;
+		display: block;
+}
+
+.no-show h2, .no-show p {
+	opacity: 0;
+}
+
+@-webkit-keyframes show-info {
+	0%{background: #ccc; border: 1px solid #ccc; height: 0px; -webkit-transform: rotateX(90deg);}
+	100%{background: -webkit-linear-gradient(top, #eee 0%, #eee 49.5%, #fafafa 50%, #fafafa 51%, #fafafa 100%); height: 200px; border: 1px solid #ccc; -webkit-transform: rotateX(-20deg);}	
+}
+
+
+@media all and (max-width: 750px){
+ 
+ .header {
+	position: relative;
+	max-width: 	100%;
+	font-family: 'icomoon';
+}
+
+  .logo {
+/* 	position: relative; */
+	position: relative;
+	margin: auto;
+	width: 100%;
+	text-align: center;
+	margin-top: 1em;	
+}
+
+.meter {
+	float: none;
+	clear: both;
+	position: relative;
+	width: 80%;
+	height: 20px;
+	margin: auto;
+	background: #555;
+	-moz-border-radius: 5px;
+	-webkit-border-radius:5px;
+	border-radius: 5px;
+}
+
+}
+
